@@ -50,7 +50,7 @@ spec:
             - name: TELE_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: tele-token-secret
+                  name: TELE_TOKEN
                   key: TELE_TOKEN
           {{- with .Values.volumeMounts }}
           volumeMounts:
