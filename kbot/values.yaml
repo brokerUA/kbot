@@ -4,16 +4,11 @@
 
 replicaCount: 1
 
-#image:
-#  repository: nginx
-#  pullPolicy: IfNotPresent
-#  # Overrides the image tag whose default is the chart appVersion.
-#  tag: ""
-
 image:
   repository: docker.io/brokerUA/kbot
-  tag: v1.0.0
+  tag: v1.0.0-3dbf731-amd64
   arch: amd64
+  pullPolicy: IfNotPresent
 
 tele-token-secret: ""
 
