@@ -1,0 +1,17 @@
+autoscaling:
+  enabled: false
+replicaCount: 1
+
+nameOverride: ""
+fullnameOverride: ""
+
+image:
+  repository: brokerua/kbot
+  tag: v1.0.0-3dbf731
+  arch: amd64
+  pullPolicy: IfNotPresent
+
+secret:
+  name: "TELE_TOKEN"
+  tokenKey: "token"
+  tokenName: "kbot"
