@@ -6,7 +6,7 @@ fullnameOverride: ""
 image:
   registry: "ghcr.io"
   repository: brokerua/kbot
-  tag: 1.0.10-0cb9cc6
+  tag: 1.0.10-4cfc359
   os: linux
   arch: amd64
   pullPolicy: IfNotPresent
