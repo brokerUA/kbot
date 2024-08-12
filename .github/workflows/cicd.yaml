@@ -41,7 +41,7 @@ jobs:
         with:
           cmd: yq -i ".image.tag=strenv(VERSION)" helm/values.yaml
 
-      - name: Config GIT & Push
+      - name: Config Git & Push
         run: |
          git config user.name github-actions
          git config user.email github-actions@github.com
