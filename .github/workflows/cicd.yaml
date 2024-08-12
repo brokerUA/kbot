@@ -26,6 +26,7 @@ jobs:
 
   cd:
     name: "CD"
+    needs: "CI"
     runs-on: "ubuntu-latest"
 
     steps:
