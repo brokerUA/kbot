@@ -23,3 +23,26 @@ jobs:
         env:
           TARGET_ARCH: "amd64"
         run: "make image push"
+
+  cd:
+    name: "CD"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+
+      - name: "Generate version"
+        run: "echo 'VERSION=$(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)' >> $GITHUB_ENV"
+
+      - name: "Set version in HELM value"
+        uses: "mikefarah/yq@master"
+        with:
+          cmd: "yq -i '.image.tag=strenv(VERSION)' helm/values.yaml"
+
+      - name: "Config GIT & Push"
+        run: |
+         git config user.name github-actions
+         git config user.email github-actions@github.com
+         git commit -am "update version $VERSION"
+         git push
