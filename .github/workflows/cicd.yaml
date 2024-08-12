@@ -50,6 +50,6 @@ jobs:
          git commit -am "update version $VERSION"
 
       - name: Push
-        uses: ad-m/github-push-actions@master
+        uses: ad-m/github-push-action@master
         with:
           branch: ${{ github.ref }}
