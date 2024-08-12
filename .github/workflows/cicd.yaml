@@ -1,6 +1,9 @@
 name: KBOT-CICD
 
-on: push
+on:
+ push:
+   branches:
+    - develop
 
 jobs:
   ci:
@@ -22,6 +25,7 @@ jobs:
       - name: Build and Push
         env:
           TARGET_ARCH: amd64
+          TARGET_OS: linux
         run: make image push
 
   cd:
