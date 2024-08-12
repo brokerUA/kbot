@@ -1,18 +1,15 @@
 autoscaling:
   enabled: false
 replicaCount: 1
-
 nameOverride: ""
 fullnameOverride: ""
-
 image:
   registry: "ghcr.io"
   repository: brokerua/kbot
-  tag: v1.0.0-3dbf731
+  tag: 1.0.10-0cb9cc6
   os: linux
   arch: amd64
   pullPolicy: IfNotPresent
-
 secret:
   name: "TELE_TOKEN"
   tokenKey: "token"
