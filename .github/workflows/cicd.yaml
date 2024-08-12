@@ -19,7 +19,7 @@ jobs:
       - name: Log in to registry
         run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Build&Push
+      - name: Build and Push
         env:
           TARGET_ARCH: amd64
         run: make image push
